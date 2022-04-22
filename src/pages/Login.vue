@@ -63,7 +63,64 @@
               </el-form-item>
             </el-form>
           </el-tab-pane>
-          <el-tab-pane label="短信登录" name="second">注册</el-tab-pane>
+          <el-tab-pane label="短信登录" name="second">
+            <el-form
+              ref="ruleFormRef"
+              :model="ruleForm"
+              status-icon
+              :rules="rules"
+              class="demo-ruleForm"
+              label-width="20px"
+            >
+              <el-form-item prop="pass">
+                <el-input
+                  v-model="input3"
+                  placeholder="填写常用手机号码"
+                  class="input-with-select"
+                  size="large"
+                >
+                  <template #prepend>
+                    <el-select
+                      v-model="select"
+                      placeholder="中国大陆"
+                      style="width: 110px"
+                      size="large"
+                    >
+                      <el-option label="美国" value="1" />
+                      <el-option label="比亚时" value="2" />
+                      <el-option label="澳大利亚" value="3" />
+                    </el-select>
+                  </template>
+                </el-input>
+              </el-form-item>
+              <el-form-item prop="checkPass">
+                <el-input
+                  v-model="ruleForm.checkPass"
+                  type="password"
+                  autocomplete="off"
+                  placeholder="密码"
+                  size="large"
+                />
+              </el-form-item>
+              <el-form-item class="form_box_back">
+                <el-checkbox
+                  name="reading"
+                  v-model="ruleForm.remember"
+                  label="记住我"
+                />
+                <div class="btn_box_back">
+                  <el-button type="text">无法验证</el-button>
+                  <el-button type="text">忘记密码</el-button>
+                </div>
+              </el-form-item>
+              <el-form-item class="form_box_login">
+                <el-button type="primary" size="large" class="btn"
+                  >登录</el-button
+                >
+                <el-button size="large" class="btn">注册</el-button>
+              </el-form-item>
+            </el-form></el-tab-pane
+          >
         </el-tabs>
       </el-col>
     </el-row>
@@ -83,6 +140,7 @@ const ruleForm = reactive({
   checkPass: "",
   age: "",
 });
+const select = ref("中国大陆");
 </script>
 
 <style lang="less">
@@ -90,6 +148,9 @@ const ruleForm = reactive({
   .banner {
     background-color: #00a0d8;
     height: 86px;
+    img {
+      width: 980px;
+    }
   }
   .title-line {
     width: 980px;

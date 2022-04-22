@@ -13,6 +13,9 @@ import TheNavigation from "./components/TheNavigation.vue";
 </script>
 
 <style lang="less">
+html {
+  font-size: 10px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
