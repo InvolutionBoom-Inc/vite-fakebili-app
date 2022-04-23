@@ -1,7 +1,9 @@
 {
   "name": "fakebili",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1", 
+  "author": "wu-honghao",
+  "homepage": "https://involutionboom-inc.github.io/vite-fakebili-app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
