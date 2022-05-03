@@ -143,8 +143,9 @@ const ruleForm = reactive({
 const select = ref("中国大陆");
 </script>
 
-<style lang="less">
+<style lang="scss">
 #app-login {
+  width: 100%;
   .banner {
     background-color: #00a0d8;
     height: 86px;

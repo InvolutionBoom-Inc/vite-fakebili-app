@@ -22,11 +22,9 @@ const isCanUse = computed(() => {
       : false;
   return flag;
 });
-
-console.log(props.navItemName);
 </script>
 
-<style lang="less">
+<style lang="scss">
 #drop_box_person {
   max-height: 75vh;
   min-height: 120px;

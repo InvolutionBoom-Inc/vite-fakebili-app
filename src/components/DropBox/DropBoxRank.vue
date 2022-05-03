@@ -25,7 +25,7 @@ const isCanUse = computed(() => {
 });
 </script>
 
-<style lang="less">
+<style lang="scss">
 #drop_box_ranking {
   max-height: 75vh;
   min-width: 75px;

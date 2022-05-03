@@ -8,11 +8,9 @@
   </div>
 </template>
 
-<script setup>
-import TheNavigation from "./components/TheNavigation.vue";
-</script>
+<script setup></script>
 
-<style lang="less">
+<style lang="scss">
 html {
   font-size: 10px;
 }
@@ -22,16 +20,22 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 1900px;
+  margin: auto;
   .el-container {
+    width: 100%;
     .header {
       padding: 0;
       height: 50px;
       font-size: 10pt;
+      width: 100%;
     }
     .main {
       padding: 0;
+      width: 100%;
     }
     .footer {
+      width: 100%;
       font-size: 25px;
       line-height: 100px;
       height: 100px;

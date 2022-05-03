@@ -19,10 +19,6 @@
 import { defineProps, computed } from "vue";
 import { useStore } from "vuex";
 
-import DropBoxMain from "./DropBoxMain.vue";
-import DropBoxRank from "./DropBoxRank.vue";
-import DropBoxPerson from "./DropBoxPerson.vue";
-
 const store = useStore();
 const props = defineProps({
   navItemName: String,

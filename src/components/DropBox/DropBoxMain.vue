@@ -17,7 +17,7 @@ const props = defineProps({
 });
 </script>
 
-<style lang="less">
+<style lang="scss">
 #drop_box_main {
   max-height: 75vh;
   min-width: 150px;
