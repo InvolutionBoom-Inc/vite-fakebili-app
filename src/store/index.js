@@ -63,6 +63,9 @@ const store = createStore({
     addUserInfo(state, info) {
       state.userInfo = info;
     },
+    deleteUserInfo(state) {
+      state.userInfo = {};
+    },
   },
 });
 export default store;

@@ -68,7 +68,7 @@
 <script setup>
 import { ref } from "vue";
 import { Search } from "@element-plus/icons-vue";
-import { getAssetsFile } from "../utils/pub-use";
+import { getAssetsFile } from "../hooks/pub-use.js";
 
 const naviItemLeft = ref([
   { name: "主站", done: "false" },

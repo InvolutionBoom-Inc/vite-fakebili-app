@@ -1,7 +1,6 @@
 import serverAxios from "../index";
 
 const login = (data) => {
-  delete data.remember;
   return serverAxios({
     url: "/user/login",
     method: "post",
