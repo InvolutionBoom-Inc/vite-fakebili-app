@@ -1,3 +1,14 @@
+//用户名验证规则
+const nickNameValidate = (rule, value, callback) => {
+  const regNickName = /^([a-zA-Z0-9_\u4e00-\u9fa5]{4,16})$/;
+  if (value === "") {
+    callback(new Error("Please input the account"));
+  } else if (value !== "" && regNickName.test(value)) {
+    callback();
+  } else {
+    callback(new Error("Length should be 4 to 16"));
+  }
+};
 //账户验证规则
 const accountValidate = (rule, value, callback) => {
   const regPhone = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
@@ -7,7 +18,7 @@ const accountValidate = (rule, value, callback) => {
   } else if ((value !== "" && regPhone.test(value)) || regEmail.test(value)) {
     callback();
   } else {
-    callback(new Error("Please enter the correct account format"));
+    callback(new Error("Please enter the correct email or phone.no format"));
   }
 };
 //密码验证规则
@@ -18,4 +29,4 @@ const passwordValidate = (rule, value, callback) => {
     callback();
   }
 };
-export { accountValidate, passwordValidate };
+export { nickNameValidate, accountValidate, passwordValidate };

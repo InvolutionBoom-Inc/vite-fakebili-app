@@ -18,10 +18,13 @@
       <el-col :span="6" class="login_box">
         <el-tabs v-model="activeName" class="demo-tabs">
           <el-tab-pane label="密码登录" name="first"
-            ><LoginFormTable
+            ><FormTable
+              name="password"
+              :ruleForm="ruleFormPassCode"
+              @resetForm="resetForm"
           /></el-tab-pane>
-          <el-tab-pane label="短信登录" name="second">
-            <!-- <LoginFormTable /> -->
+          <el-tab-pane label="用户注册" name="second">
+            <FormTable name="register" :ruleForm="ruleFormRegister" />
           </el-tab-pane>
         </el-tabs>
       </el-col>
@@ -30,12 +33,33 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 
 const activeName = ref("first");
-
 const handleClick = (tab, event) => {
   console.log(tab, event);
+};
+
+// 密码表单对象
+const ruleFormPassCode = reactive({
+  identify: "19147930303",
+  password: "z123456",
+  remember: false,
+});
+// 密码表单对象
+const ruleFormRegister = reactive({
+  nickname: "wuhonghao",
+  tel: "15217022695",
+  password: "123456",
+  remember: false,
+});
+
+const resetForm = (name) => {
+  if (name === "passcode") {
+    ruleFormPassCode = { ...ruleFormPassCode };
+  } else if (name === "register") {
+    ruleFormRegister = { ...ruleFormRegister };
+  }
 };
 </script>
 
@@ -67,7 +91,6 @@ const handleClick = (tab, event) => {
     }
   }
   .main {
-    height: 400px;
     .login_box {
       height: 100%;
       .demo-tabs {

@@ -46,6 +46,7 @@ html {
     .main {
       padding: 0;
       width: 100%;
+      min-height: 500px;
     }
     .footer {
       width: 100%;

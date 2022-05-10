@@ -1,5 +1,5 @@
 /* 用户数据处理层 */
-import { login, logOut } from "../../http/api/user.js";
+import { login, logOut, register } from "../../http/api/user.js";
 import store from "../../store/index.js";
 
 //保存用户数据
@@ -14,11 +14,34 @@ const toDeleteUserInfo = () => {
   localStorage.removeItem("userInfo");
 };
 
-/* 登录 */
-const loginLogic = async (data) => {
+/* 密码登录 */
+const loginPassWordLogic = async (data) => {
   try {
     delete data.remember;
     const res = await login({
+      ...data,
+    });
+    //存在漏洞情况:响应数据的状态码多样
+    if (res.code === 0) {
+      toSaveUserInfo({
+        ...data,
+        token: res.data.token,
+        code: 0,
+      });
+      return res.code;
+    } else {
+      throw -1;
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+/* 验证码登录 */
+const registerLogic = async (data) => {
+  try {
+    delete data.remember;
+    const res = await register({
       ...data,
     });
     //存在漏洞情况:响应数据的状态码多样
@@ -54,4 +77,4 @@ const logOutLogic = async () => {
   }
 };
 
-export { loginLogic, logOutLogic };
+export { loginPassWordLogic, registerLogic, logOutLogic };

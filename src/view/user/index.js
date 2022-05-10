@@ -1,30 +1,44 @@
 /* 交互处理层 */
-import { loginLogic, logOutLogic } from "../../hooks/user/index.js";
+import {
+  loginPassWordLogic,
+  registerLogic,
+  logOutLogic,
+} from "../../hooks/user/index.js";
 import { openElMessage } from "../utils/pop-layer";
 import router from "../../router/index.js";
 
 // 是否在登录中，做节流处理
 let isLogining = false;
-// 登录
-const toLogin = async (data) => {
+// 去登录或者注册
+const toLogin = async (data, type) => {
+  let typeMessage = "";
   if (isLogining) {
     return;
   }
   isLogining = true;
 
-  const loginResCode = await loginLogic({
-    ...data,
-  });
-  if (loginResCode === 0) {
-    openElMessage("登录成功，欢迎您！", "success");
-    router.push("/Home");
-  } else {
-    openElMessage("登录失败！", "error");
+  let loginResCode = null;
+  if (type === "password") {
+    typeMessage = "登录";
+    loginResCode = await loginPassWordLogic({
+      ...data,
+    });
+  } else if (type === "register") {
+    typeMessage = "注册";
+    loginResCode = await registerLogic({
+      ...data,
+    });
   }
 
-  setTimeout(() => {
-    isLogining = false;
-  }, 3000);
+  //做状态码判断
+  if (loginResCode === 0) {
+    openElMessage(`${typeMessage}成功，欢迎您！`, "success");
+    router.push("/Home");
+  } else {
+    openElMessage(`${typeMessage}失败！`, "error");
+  }
+
+  isLogining = false;
 };
 
 //去退出登录

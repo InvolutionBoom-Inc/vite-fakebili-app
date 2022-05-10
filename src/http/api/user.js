@@ -17,6 +17,12 @@ const logOut = () => {
   });
 };
 
-const register = (data) => {};
+const register = (data) => {
+  return serverAxios({
+    url: "/user/register",
+    method: "post",
+    data,
+  });
+};
 
 export { login, register, logOut };
