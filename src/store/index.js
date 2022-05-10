@@ -55,9 +55,14 @@ const store = createStore({
           ],
         ],
       ]),
+      userInfo: {},
     };
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    addUserInfo(state, info) {
+      state.userInfo = info;
+    },
+  },
 });
 export default store;

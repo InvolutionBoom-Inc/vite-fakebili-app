@@ -8,7 +8,20 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+onMounted(() => {
+  const userStatus = JSON.parse(localStorage.getItem("userInfo"));
+  if (userStatus != null) {
+    router.push("/Home");
+  } else {
+    router.push("/");
+  }
+});
+</script>
 
 <style lang="scss">
 html {
