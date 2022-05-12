@@ -35,6 +35,7 @@
 
 <script setup>
 import { ref, reactive } from "vue";
+import user from "../test/index.js";
 
 const activeName = ref("first");
 const handleClick = (tab, event) => {
@@ -62,6 +63,10 @@ const resetForm = (name) => {
     ruleFormRegister = { ...ruleFormRegister };
   }
 };
+
+// 测试
+ruleFormPassCode.identify = user.identify;
+ruleFormPassCode.password = user.password;
 </script>
 
 <style lang="scss">
