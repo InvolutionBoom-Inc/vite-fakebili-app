@@ -43,18 +43,18 @@ const handleClick = (tab, event) => {
 
 // 密码表单对象
 let ruleFormPassCode = reactive({
-  identify: "19147930303",
-  password: "z123456",
+  identify: "",
+  password: "",
   remember: false,
 });
 // 密码表单对象
 let ruleFormRegister = reactive({
-  nickname: "wuhonghao",
-  tel: "15217022695",
-  password: "123456",
+  nickname: "",
+  tel: "",
+  password: "",
   remember: false,
 });
-
+// 重置表单函数
 const resetForm = (name) => {
   if (name === "passcode") {
     ruleFormPassCode = { ...ruleFormPassCode };
