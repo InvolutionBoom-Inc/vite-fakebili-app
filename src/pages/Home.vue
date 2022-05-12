@@ -8,6 +8,7 @@
       </el-result>
     </el-col>
   </el-row>
+  <HomePage/>
 </template>
 
 <script setup>

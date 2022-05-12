@@ -9,12 +9,12 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
 
 const props = defineProps({
   navItemName: String,
   dropData: Array,
 });
+
 </script>
 
 <style lang="scss">

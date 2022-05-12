@@ -17,12 +17,13 @@
       <div class="line"></div>
       <el-col :span="6" class="login_box">
         <el-tabs v-model="activeName" class="demo-tabs">
-          <el-tab-pane label="密码登录" name="first"
-            ><FormTable
+          <el-tab-pane label="密码登录" name="first">
+            <FormTable
               name="password"
               :ruleForm="ruleFormPassCode"
               @resetForm="resetForm"
-          /></el-tab-pane>
+            />
+          </el-tab-pane>
           <el-tab-pane label="用户注册" name="second">
             <FormTable name="register" :ruleForm="ruleFormRegister" />
           </el-tab-pane>
@@ -41,13 +42,13 @@ const handleClick = (tab, event) => {
 };
 
 // 密码表单对象
-const ruleFormPassCode = reactive({
+let ruleFormPassCode = reactive({
   identify: "19147930303",
   password: "z123456",
   remember: false,
 });
 // 密码表单对象
-const ruleFormRegister = reactive({
+let ruleFormRegister = reactive({
   nickname: "wuhonghao",
   tel: "15217022695",
   password: "123456",

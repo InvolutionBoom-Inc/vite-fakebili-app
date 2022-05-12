@@ -30,9 +30,9 @@ const store = createStore({
         [
           "直播",
           [
-            { name: "bilibili", num: "14141" },
-            { name: "科技", num: 7541 },
-            { name: "时尚", num: 5162 },
+            { name: "bili", num: "14141" },
+            { name: "bilibili", num: 7541 },
+            { name: "hello", num: 7541 }
           ],
         ],
         [
@@ -56,6 +56,43 @@ const store = createStore({
         ],
       ]),
       userInfo: {},
+      HomePage:new Map([
+        [
+          "热门",
+          [
+            {
+              title:'收割青小麦当饲料，此事要展开说方能理解透彻！',
+              name:'央视农企',
+              watch:1234,
+              praise:222
+            },
+            {
+              title:'第二届 法环npc大赛 法环BvB',
+              name:'老凉头不凉',
+              watch:987,
+              praise:857
+            },
+            {
+              title:'【讲故事】泽丽：一路火花带闪电的平民英雄',
+              name:'徐老师',
+              watch:1234,
+              praise:222
+            },
+            {
+              title:'第二届 法环npc大赛 法环BvB',
+              name:'老凉头不凉',
+              watch:666,
+              praise:333
+            },
+            {
+              title:'第二届 法环npc大赛 法环BvB',
+              name:'老凉头不凉',
+              watch:2333,
+              praise:15
+            }
+          ]
+        ]
+      ])
     };
   },
   getters: {},
