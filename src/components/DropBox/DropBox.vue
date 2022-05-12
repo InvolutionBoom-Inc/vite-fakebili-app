@@ -29,7 +29,6 @@ const props = defineProps({
   navItemName: String,
 });
 const dropData = computed(() => store.state.dropData.get(props.navItemName));
-
 </script>
 
 <style></style>
