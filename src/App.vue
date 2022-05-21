@@ -3,7 +3,7 @@
     <el-container>
       <el-header class="header"> <TheNavigation /></el-header>
       <el-main class="main"><router-view></router-view></el-main>
-      <el-footer class="footer"> @fackbilibili</el-footer>
+      <el-footer class="footer"> @fakebili</el-footer>
     </el-container>
   </div>
 </template>
@@ -28,7 +28,7 @@ html {
   font-size: 10px;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "等线";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -37,18 +37,18 @@ html {
   margin: auto;
   .el-container {
     width: 100%;
-    .header {
+    > .header {
       padding: 0;
       height: 50px;
       font-size: 10pt;
       width: 100%;
     }
-    .main {
+    > .main {
       padding: 0;
       width: 100%;
       min-height: 500px;
     }
-    .footer {
+    > .footer {
       width: 100%;
       font-size: 25px;
       line-height: 100px;
@@ -57,6 +57,9 @@ html {
       padding: 0;
       color: #999;
     }
+  }
+  .el-main {
+    overflow: hidden;
   }
 }
 </style>

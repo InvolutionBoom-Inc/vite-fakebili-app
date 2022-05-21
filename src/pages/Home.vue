@@ -1,9 +1,10 @@
 <template>
   <!-- 退出登录块 -->
   <HomePageLogout />
-
+  <HomePageActivity />
   <!-- 热门模块 -->
   <HomePagePopular :HomePageHot="HomePageHot" />
+  <HomePageRank />
 </template>
 
 <script setup>
