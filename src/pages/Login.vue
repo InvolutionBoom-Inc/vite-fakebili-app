@@ -35,7 +35,11 @@
 
 <script setup>
 import { ref, reactive } from "vue";
-import user from "../test/index.js";
+
+const user = reactive({
+  identify:"19147930133",
+  password:"z123456"
+})
 
 const activeName = ref("first");
 const handleClick = (tab, event) => {

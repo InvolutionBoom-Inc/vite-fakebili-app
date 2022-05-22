@@ -4,6 +4,8 @@
 
   <!-- 热门模块 -->
   <HomePagePopular :HomePageHot="HomePageHot" />
+  <HomePageSwitch :HomePageSwich="HomePageSwich" />
+  <HomePageNewDynamic />
 </template>
 
 <script setup>
@@ -29,8 +31,20 @@ const useHomePageHot = () => {
   return { HomePageHot };
 };
 
+const useHomePageSwich = () =>{
+  const store = useStore()
+
+  const HomePageSwich = computed(() => store.state.HomePage.get("分区"))
+
+  return { HomePageSwich }
+}
+
 // 使用热门模块
 const { HomePageHot } = useHomePageHot();
+const { HomePageSwich } = useHomePageSwich()
+
+
+
 </script>
 
 <!-- 使用scss预处理器 -->
