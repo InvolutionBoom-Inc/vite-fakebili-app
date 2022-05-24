@@ -1,5 +1,7 @@
 <template>
   <div class="schedule">
+    <div class="schedule-title">时间表</div>
+
     <div class="schedule-box">
       <div class="schedule-box-time">
         <div class="time-image">
@@ -59,7 +61,7 @@
 </template>
 
 <script setup>
-import HomePageTimeTab from './HomePageTimeTab.vue';
+import HomePageTimeTab from "./HomePageTimeTab.vue";
 </script>
 
 <style lang="scss">
@@ -69,12 +71,30 @@ import HomePageTimeTab from './HomePageTimeTab.vue';
   width: $width;
   height: auto;
   margin: 15px auto;
+  .schedule-title {
+    width: 940px;
+    height: 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: #00a0d8;
+      border-radius: 50%;
+      position: relative;
+      left: -10px;
+    }
+  }
   .schedule-box {
     width: $width;
     height: 66px;
     display: flex;
     justify-content: space-between;
     margin-left: -15px;
+
     .schedule-box-time {
       width: 100px;
       height: 66px;
@@ -110,13 +130,13 @@ import HomePageTimeTab from './HomePageTimeTab.vue';
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        border-right: 2px solid #CDD0D6;
-        
+        border-right: 2px solid #cdd0d6;
+
         &:hover {
-          .box-main-title{
-            color:#409EFF;
+          .box-main-title {
+            color: #409eff;
           }
-          img{
+          img {
             transform: scale(1.1);
           }
         }
@@ -130,7 +150,7 @@ import HomePageTimeTab from './HomePageTimeTab.vue';
             width: 100%;
             height: 100%;
             border-radius: 12px;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
           }
         }
         .box-main-group {

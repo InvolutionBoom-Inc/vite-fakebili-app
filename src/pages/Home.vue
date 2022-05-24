@@ -1,11 +1,10 @@
 <template>
   <!-- 退出登录块 -->
   <HomePageLogout />
-
+  <HomePageActivity />
   <!-- 热门模块 -->
   <HomePagePopular :HomePageHot="HomePageHot" />
 
-  
   <!-- 栏目模块 -->
   <HomePageColumn />
 
@@ -13,10 +12,11 @@
   <HomePageDynamics />
 
   <!-- 时间表模块 -->
-    <HomePageTimeTab />
-    <HomePageSchedule />
+  <!-- <HomePageTimeTab /> -->
+  <HomePageSchedule />
 
-  </template>
+  <HomePageRank />
+</template>
 
 <script setup>
 /* 引入依赖 */
