@@ -91,6 +91,32 @@ const store = createStore({
               praise:15
             }
           ]
+        ],
+        [
+          "分区",
+          [
+            {name:"动画"},
+            {name:"番剧"},
+            {name:"国创"},
+            {name:"音乐"},
+            {name:"舞蹈"},
+            {name:"游戏"},
+            {name:"知识"},
+            {name:"科技"},
+            {name:"运动"},
+            {name:"汽车"},
+            {name:"生活"},
+            {name:"美食"},
+            {name:"动物圈"},
+            {name:"鬼畜"},
+            {name:"时尚"},
+            {name:"咨询"},
+            {name:"娱乐"},
+            {name:"影视"},
+            {name:"纪录片"},
+            {name:"电影"},
+            {name:"电视剧"}
+          ]
         ]
       ])
     };

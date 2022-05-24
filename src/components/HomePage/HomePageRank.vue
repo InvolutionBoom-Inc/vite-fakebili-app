@@ -44,7 +44,7 @@
 
 <style lang="scss">
 .home-page-rank {
-  width: 20%;
+  width: 380px;
   margin: 0 auto;
 
   > .title {

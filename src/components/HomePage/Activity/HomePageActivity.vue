@@ -116,7 +116,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .home-box-activity {
-  width: 20%;
+  width: 372px;
   margin: 0 auto;
   min-height: 300px;
   display: flex;

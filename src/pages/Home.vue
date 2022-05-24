@@ -1,21 +1,56 @@
 <template>
-  <!-- 退出登录块 -->
-  <HomePageLogout />
-  <HomePageActivity />
-  <!-- 热门模块 -->
-  <HomePagePopular :HomePageHot="HomePageHot" />
+  <div>
+    <!-- 退出登录块 -->
+    <!-- <HomePageLogout /> -->
 
-  <!-- 栏目模块 -->
-  <HomePageColumn />
+    <!-- 活动模块 -->
+    <!-- <HomePageActivity /> -->
+    <!-- 热门模块 -->
+    <!-- <HomePagePopular :HomePageHot="HomePageHot" /> -->
 
-  <!-- 动态模块 -->
-  <HomePageDynamics />
+    <!-- 栏目模块 -->
+    <!-- <HomePageColumn /> -->
 
-  <!-- 时间表模块 -->
-  <!-- <HomePageTimeTab /> -->
-  <HomePageSchedule />
+    <!-- 动态模块 -->
+    <!-- <HomePageDynamics /> -->
 
-  <HomePageRank />
+    <!-- 时间表模块 -->
+    <!-- <HomePageSchedule /> -->
+
+    <!-- 排行榜 -->
+    <!-- <HomePageRank /> -->
+
+    <!-- 分区切换nav -->
+    <!-- <HomePageSwitch :HomePageSwich="HomePageSwich" /> -->
+
+    <!-- 有新动态 -->
+    <!-- <HomePageNewDynamic /> -->
+  </div>
+
+  <div class="home-index">
+    <el-container>
+      <el-main>
+        <div class="activity-popular">
+          <HomePageActivity />
+          <HomePagePopular :HomePageHot="HomePageHot" />
+        </div>
+        <div class="dynamic-column">
+          <HomePageDynamics />
+          <HomePageColumn />
+        </div>
+        <div class="switch-content">
+          <div class="switch-content-nav"><HomePageSwitch :HomePageSwich="HomePageSwich" /></div>
+          <div class="switch-content-main">
+            <div class="dynamic-schedule">
+              <div><HomePageNewDynamic /></div>
+              <div><HomePageSchedule /></div>
+            </div>
+            <div class="switch-content-rank"><HomePageRank /></div>
+          </div>
+        </div>
+      </el-main>
+    </el-container>
+  </div>
 </template>
 
 <script setup>
@@ -41,9 +76,39 @@ const useHomePageHot = () => {
   return { HomePageHot };
 };
 
+const useHomePageSwich = () => {
+  const store = useStore();
+
+  const HomePageSwich = computed(() => store.state.HomePage.get("分区"));
+
+  return { HomePageSwich };
+};
+
 // 使用热门模块
 const { HomePageHot } = useHomePageHot();
+const { HomePageSwich } = useHomePageSwich();
 </script>
 
 <!-- 使用scss预处理器 -->
-<style lang="scss"></style>
+<style lang="scss">
+.home-index {
+  width: 1420px;
+  height: auto;
+  margin: 10px auto;
+  .el-main {
+    width: 1380px;
+    height: 100%;
+    margin: 0 auto;
+    .activity-popular, .dynamic-column{
+      width: 100%;
+      display: flex;
+    }
+    .switch-content{
+      .switch-content-main{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+</style>
