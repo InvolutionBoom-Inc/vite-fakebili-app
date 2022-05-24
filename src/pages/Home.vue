@@ -4,7 +4,19 @@
 
   <!-- 热门模块 -->
   <HomePagePopular :HomePageHot="HomePageHot" />
-</template>
+
+  
+  <!-- 栏目模块 -->
+  <HomePageColumn />
+
+  <!-- 动态模块 -->
+  <HomePageDynamics />
+
+  <!-- 时间表模块 -->
+    <HomePageTimeTab />
+    <HomePageSchedule />
+
+  </template>
 
 <script setup>
 /* 引入依赖 */
