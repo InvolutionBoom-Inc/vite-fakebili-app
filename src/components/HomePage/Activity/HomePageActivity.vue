@@ -24,14 +24,14 @@
               >
                 <img :src="item.src" class="image" />
                 <div
-                  style="font-size: 16px; margin-top: 20px; font-weight: bold"
+                  style="font-size: 16px; margin-top: 5px; font-weight: bold"
                 >
                   {{ item.title }}
                 </div>
               </div>
             </div>
 
-            <div style="padding: 14px" class="dot-box">
+            <div style="padding: 10px" class="dot-box">
               <ul>
                 <li
                   v-for="item in PHOTODATA.length"
@@ -76,7 +76,7 @@ const detailBoxWidth = computed(() => {
   return PHOTODATA.length * 380 + "px";
 });
 const detailBoxPosition = computed(() => {
-  return (isActiveIndex.value - 1) * -380 + "px";
+  return (isActiveIndex.value-1) * -380 + "px";
 });
 
 const auto = () => {
@@ -86,10 +86,11 @@ const auto = () => {
   if (isActiveIndex.value == PHOTODATA.length + 1) {
     detail.value[0].style.position = "relative";
     detail.value[0].style.left = `${PHOTODATA.length * 380}px`;
-
+    // console.log(detail.value[0])
     setTimeout(() => {
       detail.value[0].style.position = "static";
-      detailBox.value.style.transition = "none";
+      detail.value[0].style.left = "0px";
+      // detailBox.value.style.transition = "none";
       isActiveIndex.value = 1;
     }, 0);
   }
@@ -116,7 +117,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .home-box-activity {
-  width: 372px;
+  width: 352px;
   margin: 0 auto;
   min-height: 300px;
   display: flex;
@@ -126,14 +127,14 @@ onUnmounted(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-top: 5px;
     h1 {
       font-size: 20px;
     }
   }
 
   main {
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: white;
 
     .el-card {
@@ -150,7 +151,7 @@ onUnmounted(() => {
         width: 100%;
         img {
           width: 100%;
-          max-height: 300px;
+          max-height: 200px;
         }
       }
     }
@@ -159,7 +160,7 @@ onUnmounted(() => {
       ul {
         display: flex;
         justify-content: center;
-        margin-top: 10px;
+        // margin-top: 10px;
 
         .active {
           background-color: #00a0d8;

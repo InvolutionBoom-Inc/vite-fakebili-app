@@ -1,7 +1,5 @@
 <template>
   <div class="schedule">
-    <div class="schedule-title">时间表</div>
-
     <div class="schedule-box">
       <div class="schedule-box-time">
         <div class="time-image">
@@ -13,45 +11,19 @@
         </div>
       </div>
       <div class="schedule-box-mian">
-        <a href="#">
+        <a href="#" 
+        v-for="scheduleItem in HomePageSch"
+        :key="scheduleItem.title">
           <div class="image">
-            <img src="../../assets/img/time-img-item1.png" alt="" />
+            <img :src="scx" alt="" />
           </div>
           <div class="box-main-group">
-            <div class="box-main-title">夏日重现</div>
+            <div class="box-main-title">{{scheduleItem.title}}</div>
             <div class="box-main-group-bottom">
               <el-button
-                ><el-icon><i-ep-timer /></el-icon>12:00</el-button
+                ><el-icon><i-ep-timer /></el-icon>{{scheduleItem.time}}</el-button
               >
-              <div>第4话</div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="image">
-            <img src="../../assets/img/time-img-item2.png" alt="" />
-          </div>
-          <div class="box-main-group">
-            <div class="box-main-title">上班族想被治愈</div>
-            <div class="box-main-group-bottom">
-              <el-button
-                ><el-icon><i-ep-timer /></el-icon>21:30</el-button
-              >
-              <div>第4话</div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="image">
-            <img src="../../assets/img/time-img-item3.png" alt="" />
-          </div>
-          <div class="box-main-group">
-            <div class="box-main-title">骸骨骑士大人奇幻世界冒险中</div>
-            <div class="box-main-group-bottom">
-              <el-button
-                ><el-icon><i-ep-timer /></el-icon>23:00</el-button
-              >
-              <div>第4话</div>
+              <div>{{scheduleItem.chapter}}</div>
             </div>
           </div>
         </a>
@@ -61,7 +33,11 @@
 </template>
 
 <script setup>
-import HomePageTimeTab from "./HomePageTimeTab.vue";
+const props = defineProps({
+  HomePageSch: Array
+})
+let scx =
+  "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png";
 </script>
 
 <style lang="scss">

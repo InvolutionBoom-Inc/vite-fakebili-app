@@ -54,7 +54,7 @@ $font-weight: bold;
     span {
       font-size: $font-size;
       font-weight: $font-weight;
-      line-height: 28px;
+      line-height: 35px;
     }
   }
   .column-box {
