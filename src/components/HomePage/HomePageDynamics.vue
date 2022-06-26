@@ -48,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
     .group {
       display: flex;
       align-items: center;

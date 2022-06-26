@@ -8,6 +8,7 @@
 
 <script setup>
 import { computed } from "vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   navItemName: String,
@@ -23,6 +24,9 @@ const isCanUse = computed(() => {
       : false;
   return flag;
 });
+
+
+
 </script>
 
 <style lang="scss">

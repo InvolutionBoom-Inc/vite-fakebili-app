@@ -8,7 +8,7 @@
           v-for="HomePageSwichL in HomePageSwich"
           :key="HomePageSwichL"
         >
-          <span>{{ HomePageSwichL.name }}</span>
+          <span class="text_">{{ HomePageSwichL.name }}</span>
         </div>
       </div>
       <el-button circle>
@@ -21,7 +21,7 @@
 <script setup>
 const props = defineProps({
   HomePageSwich: Array,
-});
+})
 </script>
 
 <style lang="scss">
@@ -35,10 +35,11 @@ const props = defineProps({
     align-items: center;
     margin: 0px auto;
     .text {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      margin-right: 20px;
-      margin-left: 20px;
+    }
+    .text_ {
+      font-size: 14px;
     }
     .list {
       display: inline;

@@ -29,4 +29,26 @@ const passwordValidate = (rule, value, callback) => {
     callback();
   }
 };
-export { nickNameValidate, accountValidate, passwordValidate };
+//上传视频标题、简历规则
+const validateTitle = (rule, value, callback) => {
+  if (value === "") {
+    callback(new Error("Please input the Title"))
+  } else {
+    callback()
+  }
+}
+
+const validateDirection = (rule, value, callback) => {
+  if (value === "") {
+    callback(new Error("Please input the direction"))
+  } else {
+    callback()
+  }
+}
+
+const resetForm = (formEI) => {
+  if (!formEI) return
+  formEI.resetFields()
+}
+
+export { nickNameValidate, accountValidate, passwordValidate,validateTitle,validateDirection,resetForm };

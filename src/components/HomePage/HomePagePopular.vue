@@ -19,8 +19,8 @@
         <el-col class="hot-t">
           <el-card
             :body-style="{ padding: '0px', textAlign: 'left' }"
-            v-for="HomePageHotItem in HomePageHot"
-            :key="HomePageHotItem.name"
+            v-for="HomePageHotItem in arr"
+            :key="arr.name"
           >
             <div class="image">
               <img :src="scx" />
@@ -52,14 +52,29 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive } from "vue"
+import { logInfo } from "../../hooks/user/video.js"
 
 const props = defineProps({
   HomePageHot: Array,
-});
+})
+
+const info = logInfo({ avid: "12" })
+
+console.log(info)
+
+let arr = []
+
+props.HomePageHot.forEach((element) => {
+  if (arr.length < 5) {
+    arr.push(element)
+  } else {
+    return
+  }
+})
 
 let scx =
-  "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png";
+  "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
 </script>
 
 <style lang="scss">
