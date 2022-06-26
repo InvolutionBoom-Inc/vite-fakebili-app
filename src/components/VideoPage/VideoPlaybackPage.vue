@@ -99,11 +99,9 @@ const tag = reactive(["知识","财经","美国","金融"])
 <style lang="scss">
 .video {
   width: 1157px;
-  margin: 0 auto;
   .video_top {
     height: 88px;
     padding-top: 22px;
-    margin: 0 auto;
     .video_ {
       display: flex;
       justify-content: flex-start;

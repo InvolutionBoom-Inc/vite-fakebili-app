@@ -20,7 +20,7 @@
 .discuss {
   width: 1157px;
   height: 36px;
-  margin: 10px auto;
+  margin-top: 10px;
   .discuss_topU {
     height: 36px;
     display: flex;
@@ -44,7 +44,7 @@
   .g {
     margin: 0px 5px;
   }
-  .discuss_right{
+  .discuss_right {
     cursor: pointer;
   }
 }

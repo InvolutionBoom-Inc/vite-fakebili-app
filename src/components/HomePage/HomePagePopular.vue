@@ -81,7 +81,7 @@ let scx =
 .home-box-popular {
   width: 1000px;
   height: 320px;
-  margin: 15px auto;
+  // margin: 15px auto;
   .text {
     font-size: 24px;
   }
